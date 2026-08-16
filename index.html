@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ARASAKA</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<canvas id="codeRain"></canvas>
+	<div class="vignette"></div>
+
+	<div class="center">
+		<svg class="arasaka-logo" viewBox="0 0 240 250" aria-hidden="true">
+			<defs>
+				<linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0" stop-color="#ff4a4a"/>
+					<stop offset="1" stop-color="#cc0000"/>
+				</linearGradient>
+			</defs>
+
+			<path class="l-facet" d="M120 18 L178 74 L164 84 L120 46 L76 84 L62 74 Z"/>
+			<path class="l-body" d="M76 84 L48 218 L88 218 L106 128 L120 150 L134 128 L152 218 L192 218 L164 84 Z"/>
+			<path class="l-bar" d="M96 192 L144 192 L148 199 L92 199 Z"/>
+			<path class="l-wing l-wing-l" d="M34 132 L74 132 L78 138 L34 138 Z"/>
+			<path class="l-wing l-wing-r" d="M206 132 L166 132 L162 138 L206 138 Z"/>
+			<path class="l-inner" d="M120 46 L120 148" />
+			<path class="l-inner" d="M120 178 L120 150" />
+		</svg>
+		<h1 class="arasaka-text">ARASAKA</h1>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
