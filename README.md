@@ -2,9 +2,11 @@
 
 Fondo de pantalla animado tipo web para **Wallpaper Engine** con temática *Cyberpunk / Arasaka*:
 
-- **Emblema real de Arasaka**: árbol de tres ramas en anillo (representa las tres divisiones de la corp: *Seguridad, Manufactura y Banco*), fiel al logotipo oficial, en rojo `#E60000` con brillo neón titilante.
-- **Wordmark ARASAKA** con tipografía **Michroma** (estilo Bank Gothic / Eurostile, la familia usada por el logotipo de la corp) + kanji **荒坂** y el tag **ARASAKA CORPORATION**.
-- Fondo negro con finas líneas de código rojo que ascienden de abajo hacia arriba, con brillo sutil para no competir con el emblema.
+- **Emblema real de Arasaka**: árbol de tres ramas en anillo (representa las tres divisiones de la corp: *Seguridad, Manufactura y Banco*), fiel al logotipo oficial, en rojo Arasaka (`#E60000`).
+- **Wordmark ARASAKA** al lado del emblema (layout horizontal, como el branding oficial) con las letras del logotipo real de la corp (SVG).
+- **Kanji 荒坂** debajo, con el mismo color, pulso y tratamiento que el logo y el wordmark.
+- **Pulso neón**: el logo, el wordmark y el kanji se encienden (rojo más claro + halo) y vuelven al rojo cada 1 segundo, con flotaciones verticales sutiles e independientes.
+- Fondo negro con finas líneas de código en rojo rosado que ascienden con brillo en las cabezas y destellos aleatorios.
 
 ## Uso en Wallpaper Engine
 
@@ -14,6 +16,8 @@ Fondo de pantalla animado tipo web para **Wallpaper Engine** con temática *Cybe
    `C:\Program Files (x86)\Steam\steamapps\common\wallpaper_engine\projects\myprojects\Arasaka Neon`
 2. Abrí Wallpaper Engine; en *Mis fondos* debería aparecer **Arasaka Neon**.
 3. Click derecho sobre él → *Aplicar a monitor*.
+
+*(El proyecto incluye `project.json` y `preview.png` para que Wallpaper Engine lo reconozca.)*
 
 ### Opción B — Desde la URL de Vercel
 

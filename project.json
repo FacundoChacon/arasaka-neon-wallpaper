@@ -1,0 +1,24 @@
+{
+	"type": "web",
+	"title": "Arasaka Neon",
+	"file": "index.html",
+	"preview": "preview.png",
+	"description": "ARASAKA (Cyberpunk 2077) - neon animated wallpaper",
+	"general": {
+		"type": "web"
+	},
+	"web": {
+		"width": 1920,
+		"height": 1080,
+		"fps": 30,
+		"enableRightClick": false,
+		"audio": false,
+		"muteAudio": true,
+		"volume": 0,
+		"autoplay": true,
+		"allowfullscreen": false,
+		"allowscaling": true,
+		"stretch": true,
+		"interactive": false
+	}
+}

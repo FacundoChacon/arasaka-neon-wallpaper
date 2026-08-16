@@ -7,8 +7,8 @@
 
 :root {
 	--neon: #e60000;
-	--neon-hot: #ff4d4d;
-	--neon-dim: #b30000;
+	--neon-dim: #a60000;
+	--neon-bright: #ff2626;
 }
 
 * {
@@ -45,152 +45,117 @@ canvas#codeRain {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	animation: glowPulse 6s ease-in-out infinite;
+}
+
+.lockup {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: min(7vw, 8vh);
 }
 
 .arasaka-logo {
-	width: min(34vh, 44vw);
-	height: auto;
+	height: min(60vh, 72vw);
+	width: auto;
 	fill: var(--neon);
-	filter: drop-shadow(0 0 6px rgba(230, 0, 0, 0.6)) drop-shadow(0 0 18px rgba(230, 0, 0, 0.35));
+	opacity: 0.85;
+	animation:
+		pulse 2s ease-in-out infinite,
+		logoFloat 9s ease-in-out infinite;
 }
 
-.arasaka-text {
-	margin-top: 3vh;
-	font-family: "Michroma", "Segoe UI", Arial, sans-serif;
-	font-weight: 400;
-	font-size: clamp(16px, 5.6vh, 60px);
-	letter-spacing: 0.2em;
-	text-indent: 0.2em;
-	color: var(--neon-hot);
-	text-shadow:
-		0 0 3px var(--neon-hot),
-		0 0 9px var(--neon),
-		0 0 22px var(--neon),
-		0 0 48px rgba(230, 0, 0, 0.55),
-		0 0 90px rgba(230, 0, 0, 0.35);
-	animation: flicker 6.5s ease-in-out infinite;
+.arasaka-wordmark {
+	width: calc(100vw - min(60vh, 72vw) - min(7vw, 8vh) - 6vw);
+	height: auto;
+	fill: var(--neon);
+	opacity: 0.85;
+	animation:
+		pulse 2s ease-in-out infinite,
+		wordFloat 9s ease-in-out infinite;
 }
 
 .kanji {
-	margin-top: 1.7vh;
+	margin-top: 9vh;
 	font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", "Noto Sans JP", sans-serif;
-	font-size: clamp(13px, 3.2vh, 32px);
+	font-size: clamp(34px, 7.5vh, 75px);
 	letter-spacing: 0.35em;
 	text-indent: 0.35em;
-	color: var(--neon-dim);
-	text-shadow: 0 0 8px rgba(230, 0, 0, 0.45);
-	opacity: 0.9;
-}
-
-.corpo-tag {
-	margin-top: 1.6vh;
-	font-family: "Michroma", "Segoe UI", Arial, sans-serif;
-	font-size: clamp(8px, 1.8vh, 17px);
-	letter-spacing: 0.55em;
-	text-indent: 0.55em;
 	color: var(--neon);
-	text-shadow: 0 0 6px rgba(230, 0, 0, 0.5);
-	opacity: 0.92;
+	opacity: 0.85;
+	animation:
+		pulseText 2s ease-in-out infinite,
+		kanjiFloat 9s ease-in-out infinite;
 }
 
-@keyframes glowPulse {
+@keyframes pulse {
 	0%, 100% {
+		fill: var(--neon);
 		filter:
-			drop-shadow(0 0 4px rgba(230, 0, 0, 0.9))
-			drop-shadow(0 0 14px rgba(230, 0, 0, 0.55))
-			drop-shadow(0 0 46px rgba(230, 0, 0, 0.3));
-	}
-	45% {
-		filter:
-			drop-shadow(0 0 3px rgba(230, 0, 0, 0.8))
-			drop-shadow(0 0 10px rgba(230, 0, 0, 0.4))
-			drop-shadow(0 0 34px rgba(230, 0, 0, 0.2));
-	}
-	48% {
-		filter:
-			drop-shadow(0 0 2px rgba(230, 0, 0, 0.7))
-			drop-shadow(0 0 7px rgba(230, 0, 0, 0.3))
-			drop-shadow(0 0 22px rgba(230, 0, 0, 0.15));
+			brightness(1)
+			drop-shadow(0 0 0 rgba(255, 150, 165, 0))
+			drop-shadow(0 0 0 rgba(255, 90, 105, 0));
 	}
 	50% {
+		fill: var(--neon-bright);
 		filter:
-			drop-shadow(0 0 4px rgba(255, 26, 26, 1))
-			drop-shadow(0 0 16px rgba(230, 0, 0, 0.65))
-			drop-shadow(0 0 52px rgba(230, 0, 0, 0.38));
-	}
-	73% {
-		filter:
-			drop-shadow(0 0 4px rgba(230, 0, 0, 0.9))
-			drop-shadow(0 0 13px rgba(230, 0, 0, 0.5))
-			drop-shadow(0 0 42px rgba(230, 0, 0, 0.28));
-	}
-	76% {
-		filter:
-			drop-shadow(0 0 2px rgba(230, 0, 0, 0.75))
-			drop-shadow(0 0 8px rgba(230, 0, 0, 0.35))
-			drop-shadow(0 0 26px rgba(230, 0, 0, 0.18));
-	}
-	79% {
-		filter:
-			drop-shadow(0 0 4px rgba(255, 26, 26, 1))
-			drop-shadow(0 0 15px rgba(230, 0, 0, 0.6))
-			drop-shadow(0 0 48px rgba(230, 0, 0, 0.34));
+			brightness(1.25)
+			drop-shadow(0 0 12px rgba(255, 150, 165, 0.7))
+			drop-shadow(0 0 42px rgba(255, 90, 105, 0.55))
+			drop-shadow(0 0 95px rgba(230, 0, 0, 0.35));
 	}
 }
 
-@keyframes flicker {
+@keyframes pulseText {
 	0%, 100% {
-		opacity: 1;
-		text-shadow:
-			0 0 3px var(--neon-hot),
-			0 0 9px var(--neon),
-			0 0 22px var(--neon),
-			0 0 48px rgba(230, 0, 0, 0.55),
-			0 0 90px rgba(230, 0, 0, 0.35);
-	}
-	45% {
-		opacity: 0.96;
-		text-shadow:
-			0 0 2px var(--neon-hot),
-			0 0 7px var(--neon),
-			0 0 17px var(--neon),
-			0 0 36px rgba(230, 0, 0, 0.4),
-			0 0 66px rgba(230, 0, 0, 0.25);
-	}
-	47% {
-		opacity: 0.82;
+		color: var(--neon);
+		filter:
+			brightness(1)
+			drop-shadow(0 0 0 rgba(255, 150, 165, 0))
+			drop-shadow(0 0 0 rgba(255, 90, 105, 0))
+			drop-shadow(0 0 0 rgba(230, 0, 0, 0));
 	}
 	50% {
-		opacity: 1;
-		text-shadow:
-			0 0 4px var(--neon-hot),
-			0 0 12px var(--neon),
-			0 0 28px var(--neon),
-			0 0 58px rgba(230, 0, 0, 0.65),
-			0 0 110px rgba(230, 0, 0, 0.42);
+		color: var(--neon-bright);
+		filter:
+			brightness(1.25)
+			drop-shadow(0 0 12px rgba(255, 150, 165, 0.7))
+			drop-shadow(0 0 42px rgba(255, 90, 105, 0.55))
+			drop-shadow(0 0 95px rgba(230, 0, 0, 0.35));
 	}
-	72% {
-		opacity: 0.97;
-		text-shadow:
-			0 0 3px var(--neon-hot),
-			0 0 10px var(--neon),
-			0 0 20px var(--neon),
-			0 0 42px rgba(230, 0, 0, 0.5),
-			0 0 80px rgba(230, 0, 0, 0.3);
+}
+
+@keyframes logoFloat {
+	0%, 100% {
+		transform: translateY(0);
 	}
-	74% {
-		opacity: 0.84;
+	50% {
+		transform: translateY(-0.9vh);
 	}
-	78% {
-		opacity: 1;
+}
+
+@keyframes wordFloat {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(0.6vh);
+	}
+}
+
+@keyframes kanjiFloat {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-0.5vh);
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.center,
-	.arasaka-text {
+	.arasaka-logo,
+	.arasaka-wordmark,
+	.kanji {
 		animation: none;
-		opacity: 1;
 	}
 }

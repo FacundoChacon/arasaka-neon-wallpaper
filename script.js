@@ -46,6 +46,8 @@
 				speed: (0.35 + Math.random() * 1.05) * dpr,
 				alpha: 0.04 + Math.random() * 0.12,
 				bright: Math.random() < 0.1,
+				phase: Math.random() * Math.PI * 2,
+				twSpeed: 0.02 + Math.random() * 0.06,
 				chars: chars
 			});
 		}
@@ -62,26 +64,40 @@
 				col.speed = (0.35 + Math.random() * 1.05) * dpr;
 				col.alpha = 0.04 + Math.random() * 0.12;
 				col.bright = Math.random() < 0.1;
+				col.phase = Math.random() * Math.PI * 2;
+				col.twSpeed = 0.02 + Math.random() * 0.06;
 			}
+			col.phase += col.twSpeed;
+			const tw = (0.5 + 0.5 * Math.sin(col.phase)) * (Math.random() < 0.03 ? 0.45 : 1);
 
 			let i = 0;
 			let y = col.y;
 			while (y > -BASE_SIZE * dpr && i < charCount) {
 				if (Math.random() < 0.003) col.chars[i] = randChar();
 				const ch = col.chars[i];
+				const glow = i === 0 || (i !== 0 && Math.random() < 0.004);
+
+				if (glow) {
+					ctx.shadowColor = "rgba(255,175,185,0.85)";
+					ctx.shadowBlur = 7 * dpr;
+				} else {
+					ctx.shadowBlur = 0;
+				}
 
 				if (i === 0 && col.bright) {
-					ctx.fillStyle = "rgba(255,90,90,0.42)";
+					ctx.fillStyle = "rgba(255,220,230," + (0.35 + 0.4 * tw) + ")";
 				} else if (i === 0) {
-					ctx.fillStyle = "rgba(255,70,70," + Math.min(col.alpha * 2.2, 0.34) + ")";
+					ctx.fillStyle = "rgba(255,175,185," + Math.min(col.alpha * 2.4 * (0.5 + 0.5 * tw), 0.5) + ")";
 				} else {
-					ctx.fillStyle = "rgba(255,32,32," + col.alpha + ")";
+					ctx.fillStyle = "rgba(255,110,125," + col.alpha * (0.4 + 0.6 * tw) + ")";
 				}
 
 				ctx.fillText(ch, col.x, y);
 				y -= BASE_SIZE * dpr;
 				i++;
 			}
+
+			ctx.shadowBlur = 0;
 		}
 
 		requestAnimationFrame(tick);
