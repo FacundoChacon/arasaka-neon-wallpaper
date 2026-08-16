@@ -78,18 +78,18 @@
 				const glow = i === 0 || (i !== 0 && Math.random() < 0.004);
 
 				if (glow) {
-					ctx.shadowColor = "rgba(255,175,185,0.85)";
+					ctx.shadowColor = "rgba(230,0,0,0.85)";
 					ctx.shadowBlur = 7 * dpr;
 				} else {
 					ctx.shadowBlur = 0;
 				}
 
 				if (i === 0 && col.bright) {
-					ctx.fillStyle = "rgba(255,220,230," + (0.35 + 0.4 * tw) + ")";
+					ctx.fillStyle = "rgba(255,70,70," + (0.35 + 0.4 * tw) + ")";
 				} else if (i === 0) {
-					ctx.fillStyle = "rgba(255,175,185," + Math.min(col.alpha * 2.4 * (0.5 + 0.5 * tw), 0.5) + ")";
+					ctx.fillStyle = "rgba(255,45,45," + Math.min(col.alpha * 2.4 * (0.5 + 0.5 * tw), 0.5) + ")";
 				} else {
-					ctx.fillStyle = "rgba(255,110,125," + col.alpha * (0.4 + 0.6 * tw) + ")";
+					ctx.fillStyle = "rgba(230,0,0," + col.alpha * (0.4 + 0.6 * tw) + ")";
 				}
 
 				ctx.fillText(ch, col.x, y);
