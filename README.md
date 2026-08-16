@@ -2,8 +2,9 @@
 
 Fondo de pantalla animado tipo web para **Wallpaper Engine** con temática *Cyberpunk / Arasaka*:
 
-- Logo Arasaka estilizado + nombre **ARASAKA** en neón rojo con brillo titilante gradual.
-- Fondo negro con finas líneas de código rojo que ascienden de abajo hacia arriba, con brillo sutil para no competir con el nombre.
+- **Emblema real de Arasaka**: árbol de tres ramas en anillo (representa las tres divisiones de la corp: *Seguridad, Manufactura y Banco*), fiel al logotipo oficial, en rojo `#E60000` con brillo neón titilante.
+- **Wordmark ARASAKA** con tipografía **Michroma** (estilo Bank Gothic / Eurostile, la familia usada por el logotipo de la corp) + kanji **荒坂** y el tag **ARASAKA CORPORATION**.
+- Fondo negro con finas líneas de código rojo que ascienden de abajo hacia arriba, con brillo sutil para no competir con el emblema.
 
 ## Uso en Wallpaper Engine
 
@@ -24,7 +25,11 @@ Fondo de pantalla animado tipo web para **Wallpaper Engine** con temática *Cybe
 
 En el editor de Wallpaper Engine: **Archivo → Publicar en Workshop**.
 Necesitás una imagen de preview (PNG/JPG) y completar categoría/etiquetas/clasificación de edad.
-Asegurate de tener derechos sobre el contenido (el logo es una aproximación estilizada fan-made del emblema de Arasaka / CD Projekt Red).
+Asegurate de tener derechos sobre el contenido (el emblema es una reproducción fan del logotipo de Arasaka / CD Projekt Red; la fuente Michroma es SIL Open Font License, gratuita).
+
+## Licencia de la fuente
+
+`fonts/Michroma-Regular.ttf` es **Michroma** por Brian J. Bonislawsky (Vernon Adams, revisión de Astigmatic), licencia **SIL Open Font License 1.1**. Incluida localmente para funcionar sin conexión.
 
 ## Deploy
 
@@ -32,4 +37,4 @@ Asegurate de tener derechos sobre el contenido (el logo es una aproximación est
 vercel --prod
 ```
 
-Sitio estático: solo `index.html`, `style.css` y `script.js`.
+Sitio estático: solo `index.html`, `style.css`, `script.js` y la fuente en `fonts/`.

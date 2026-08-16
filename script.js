@@ -44,15 +44,15 @@
 				x: i * spacing,
 				y: Math.random() * H,
 				speed: (0.35 + Math.random() * 1.05) * dpr,
-				alpha: 0.05 + Math.random() * 0.16,
-				bright: Math.random() < 0.12,
+				alpha: 0.04 + Math.random() * 0.12,
+				bright: Math.random() < 0.1,
 				chars: chars
 			});
 		}
 	}
 
 	function tick() {
-		ctx.fillStyle = "rgba(5,0,0,0.16)";
+		ctx.fillStyle = "rgba(5,0,0,0.13)";
 		ctx.fillRect(0, 0, W, H);
 
 		for (const col of columns) {
@@ -60,8 +60,8 @@
 			if (col.y < -BASE_SIZE * dpr) {
 				col.y = H + Math.random() * BASE_SIZE * dpr * 4;
 				col.speed = (0.35 + Math.random() * 1.05) * dpr;
-				col.alpha = 0.05 + Math.random() * 0.16;
-				col.bright = Math.random() < 0.12;
+				col.alpha = 0.04 + Math.random() * 0.12;
+				col.bright = Math.random() < 0.1;
 			}
 
 			let i = 0;
@@ -71,11 +71,11 @@
 				const ch = col.chars[i];
 
 				if (i === 0 && col.bright) {
-					ctx.fillStyle = "rgba(255,90,90,0.5)";
+					ctx.fillStyle = "rgba(255,90,90,0.42)";
 				} else if (i === 0) {
-					ctx.fillStyle = "rgba(255,70,70," + Math.min(col.alpha * 2.2, 0.4) + ")";
+					ctx.fillStyle = "rgba(255,70,70," + Math.min(col.alpha * 2.2, 0.34) + ")";
 				} else {
-					ctx.fillStyle = "rgba(255,28,28," + col.alpha + ")";
+					ctx.fillStyle = "rgba(255,32,32," + col.alpha + ")";
 				}
 
 				ctx.fillText(ch, col.x, y);
