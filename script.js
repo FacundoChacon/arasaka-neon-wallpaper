@@ -1,6 +1,13 @@
 (function () {
 	"use strict";
 
+	document.addEventListener("selectstart", function (e) {
+		e.preventDefault();
+	});
+	document.addEventListener("dragstart", function (e) {
+		e.preventDefault();
+	});
+
 	const canvas = document.getElementById("codeRain");
 	const ctx = canvas.getContext("2d");
 
